@@ -30,4 +30,6 @@ public class BottomViewBehavior extends CoordinatorLayout.Behavior<View> {
         child.setTranslationY(translationY);
         return true;
     }
+
+
 }
