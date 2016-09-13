@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ScrollingIndexActivity">
+    tools:context=".IndexFragment">
 
     <android.support.design.widget.AppBarLayout
         android:id="@+id/app_bar"
@@ -41,30 +41,11 @@
         android:id="@+id/fab"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginRight="16dp"
+        android:layout_gravity="bottom|right"
         android:layout_marginBottom="72dp"
+        android:layout_marginRight="16dp"
         android:src="@android:drawable/ic_dialog_email"
-        app:layout_behavior="home.smart.fly.zhihuindex.behavior.FabBehavior"
-        android:layout_gravity="bottom|right" />
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="?attr/actionBarSize"
-        android:layout_gravity="bottom"
-        android:background="@color/colorPrimary"
-        android:gravity="center"
-        app:layout_behavior="home.smart.fly.zhihuindex.behavior.BottomViewBehavior">
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:textColor="#ffffff"
-            android:text="这是一个底栏"/>
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:textColor="#ffffff"
-            android:text="这是一个底栏"/>
-    </LinearLayout>
+        app:layout_behavior="home.smart.fly.zhihuindex.behavior.FabBehavior" />
+
 
 </android.support.design.widget.CoordinatorLayout>

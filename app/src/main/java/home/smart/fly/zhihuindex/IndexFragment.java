@@ -2,44 +2,57 @@ package home.smart.fly.zhihuindex;
 
 import android.content.Context;
 import android.os.Bundle;
+import android.support.annotation.Nullable;
+import android.support.v4.app.Fragment;
 import android.support.v4.widget.SwipeRefreshLayout;
-import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import home.smart.fly.zhihuindex.adapter.IndexRecyclerViewAdapter;
 
-public class ScrollingIndexActivity extends AppCompatActivity implements SwipeRefreshLayout.OnRefreshListener{
+public class IndexFragment extends Fragment implements SwipeRefreshLayout.OnRefreshListener {
     private Context mContext;
     private SwipeRefreshLayout swipeRefreshLayout;
     private RecyclerView recyclerView;
     private IndexRecyclerViewAdapter adapter;
 
+    //
+    private View rootView;
+
+
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_scrolling);
-        mContext=this;
+    public void onAttach(Context context) {
+        super.onAttach(context);
+        mContext = context;
+    }
+
+    @Nullable
+    @Override
+    public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+        rootView = inflater.inflate(R.layout.activity_scrolling, null);
         InitView();
+        return rootView;
     }
 
     private void InitView() {
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
-        swipeRefreshLayout = (SwipeRefreshLayout) findViewById(R.id.swipe_refresh);
+        Toolbar toolbar = (Toolbar) rootView.findViewById(R.id.toolbar);
+        swipeRefreshLayout = (SwipeRefreshLayout) rootView.findViewById(R.id.swipe_refresh);
         swipeRefreshLayout.setOnRefreshListener(this);
-        recyclerView = (RecyclerView) findViewById(R.id.recyclerview);
+        recyclerView = (RecyclerView) rootView.findViewById(R.id.recyclerview);
         LinearLayoutManager manager = new LinearLayoutManager(mContext);
         recyclerView.setLayoutManager(manager);
         List<String> datas = new ArrayList<>();
-        for(int i=0;i<100;i++) {
+        for (int i = 0; i < 100; i++) {
             datas.add("This is item " + i);
         }
-        adapter=new IndexRecyclerViewAdapter(datas);
+        adapter = new IndexRecyclerViewAdapter(datas);
         recyclerView.setAdapter(adapter);
     }
 
