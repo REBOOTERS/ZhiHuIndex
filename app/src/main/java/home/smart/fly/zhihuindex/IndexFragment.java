@@ -9,7 +9,6 @@ import android.support.v4.app.Fragment;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -27,7 +26,6 @@ public class IndexFragment extends Fragment implements SwipeRefreshLayout.OnRefr
 
     private CoordinatorLayout coordinatorLayout;
     private FloatingActionButton fab;
-    private IndexScrollListener listener;
     //
     private View rootView;
 
@@ -73,23 +71,6 @@ public class IndexFragment extends Fragment implements SwipeRefreshLayout.OnRefr
             }
         });
 
-        recyclerView.addOnScrollListener(new RecyclerView.OnScrollListener() {
-            @Override
-            public void onScrollStateChanged(RecyclerView recyclerView, int newState) {
-                Log.e("111", " " + newState);
-                super.onScrollStateChanged(recyclerView, newState);
-//                if(newState==0){
-                    if (listener != null) {
-                        if(fab.getVisibility()==View.VISIBLE){
-                            listener.show();
-                        }else {
-                            listener.hide();
-                        }
-                    }
-//                }
-            }
-        });
-
 
     }
 
@@ -100,15 +81,5 @@ public class IndexFragment extends Fragment implements SwipeRefreshLayout.OnRefr
         swipeRefreshLayout.setRefreshing(false);
     }
 
-    /**
-     * 监听Fragment 内Scroll 状态的接口
-     */
-    public interface IndexScrollListener{
-        void show();
-        void hide();
-    }
 
-    public void setListener(IndexScrollListener listener) {
-        this.listener = listener;
-    }
 }

@@ -12,28 +12,15 @@
         android:layout_height="match_parent" />
 
 
-    <LinearLayout
-        android:id="@+id/bottom"
+    <it.sephiroth.android.library.bottomnavigation.BottomNavigation
+        android:id="@+id/BottomNavigation"
         android:layout_width="match_parent"
-        android:layout_height="?attr/actionBarSize"
+        android:layout_height="wrap_content"
         android:layout_gravity="bottom"
-        android:background="@color/colorPrimary"
-        android:gravity="center"
-        app:layout_behavior="home.smart.fly.zhihuindex.behavior.BottomViewBehavior">
+        app:bbn_badgeProvider="@string/bbn_badgeProvider"
+        app:bbn_entries="@menu/menu_bottom_item"
+        app:bbn_scrollEnabled="true"
+        app:layout_behavior="@string/bbn_phone_view_behavior" />
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:text="这是一个底栏"
-            android:textColor="#ffffff" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:text="这是一个底栏"
-            android:textColor="#ffffff" />
-    </LinearLayout>
 
 </android.support.design.widget.CoordinatorLayout>
