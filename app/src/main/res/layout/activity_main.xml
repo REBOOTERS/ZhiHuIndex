@@ -30,23 +30,75 @@
         android:layout_height="match_parent" />
 
 
-    <android.support.design.widget.FloatingActionButton
-        android:id="@+id/fab"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="bottom|right"
-        android:layout_marginBottom="72dp"
-        android:layout_marginRight="16dp"
-        android:src="@android:drawable/ic_dialog_email"
-        app:layout_behavior="home.smart.fly.zhihuindex.behavior.FabBehavior" />
+
 
 
     <LinearLayout
-        app:layout_behavior="home.smart.fly.zhihuindex.behavior.BottomViewBehavior"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
         android:layout_gravity="bottom"
         android:background="@color/colorPrimary"
-        android:layout_width="match_parent"
-        android:layout_height="60dp"/>
+        android:orientation="horizontal"
+        app:layout_behavior="home.smart.fly.zhihuindex.behavior.BottomViewBehavior">
+
+        <LinearLayout
+            android:gravity="center"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_bottomtabbar_feed" />
+        </LinearLayout>
+        <LinearLayout
+            android:gravity="center"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_bottomtabbar_discover" />
+        </LinearLayout>
+        <LinearLayout
+            android:gravity="center"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_bottomtabbar_notification" />
+        </LinearLayout>
+        <LinearLayout
+            android:gravity="center"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_bottomtabbar_message" />
+        </LinearLayout>
+        <LinearLayout
+            android:gravity="center"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_bottomtabbar_more" />
+        </LinearLayout>
+
+
+    </LinearLayout>
 
 
 </android.support.design.widget.CoordinatorLayout>
