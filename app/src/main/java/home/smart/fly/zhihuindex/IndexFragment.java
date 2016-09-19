@@ -3,8 +3,6 @@ package home.smart.fly.zhihuindex;
 import android.content.Context;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
-import android.support.design.widget.CoordinatorLayout;
-import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.Fragment;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.widget.LinearLayoutManager;
@@ -24,8 +22,6 @@ public class IndexFragment extends Fragment implements SwipeRefreshLayout.OnRefr
     private RecyclerView recyclerView;
     private IndexRecyclerViewAdapter adapter;
 
-    private CoordinatorLayout coordinatorLayout;
-    private FloatingActionButton fab;
     //
     private View rootView;
 
@@ -57,19 +53,6 @@ public class IndexFragment extends Fragment implements SwipeRefreshLayout.OnRefr
         adapter = new IndexRecyclerViewAdapter(datas);
         recyclerView.setAdapter(adapter);
 
-        fab = (FloatingActionButton) rootView.findViewById(R.id.fab);
-        coordinatorLayout = (CoordinatorLayout) rootView.findViewById(R.id.coordinatorLayout);
-
-        recyclerView.addOnScrollListener(new RecyclerView.OnScrollListener() {
-            @Override
-            public void onScrolled(RecyclerView recyclerView, int dx, int dy) {
-                super.onScrolled(recyclerView, dx, dy);
-
-//                Log.e("lll", " "+dy);
-
-
-            }
-        });
 
 
     }
