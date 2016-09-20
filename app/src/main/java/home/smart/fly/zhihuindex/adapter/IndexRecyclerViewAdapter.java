@@ -26,7 +26,7 @@ public class IndexRecyclerViewAdapter extends RecyclerView.Adapter<IndexRecycler
     @Override
     public MyViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         mContext = parent.getContext();
-        View view = LayoutInflater.from(mContext).inflate(R.layout.index_item_layout, null);
+        View view = LayoutInflater.from(mContext).inflate(R.layout.index_list_item, null);
         MyViewHolder holder = new MyViewHolder(view);
         return holder;
     }

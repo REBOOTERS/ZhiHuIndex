@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.zhihu.android.base.widget.ZHLinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:zhihu="http://schemas.android.com/apk/res-auto"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="@dimen/card_margin_bottom"
+    android:layout_marginTop="@dimen/card_margin_top"
+    android:clipChildren="false"
+    android:clipToPadding="false"
+    android:elevation="@dimen/card_elevation"
+    android:foreground="?selectableItemBackground"
+    android:orientation="vertical"
+    android:paddingBottom="@dimen/card_content_padding_vertical"
+    android:paddingLeft="@dimen/card_content_padding"
+    android:paddingRight="@dimen/dp8"
+    android:paddingTop="@dimen/dp8"
+    android:tag="layout/recycler_item_feed_question_card_0">
+
+    <com.zhihu.android.base.widget.ZHRelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content">
+
+        <com.zhihu.android.base.widget.ZHSpace
+            android:id="@id/menu_anchor"
+            android:layout_width="1.0px"
+            android:layout_height="1.0px"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentTop="true" />
+
+        <com.zhihu.android.base.widget.ZHImageView
+            android:id="@id/menu"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:paddingBottom="@dimen/dp4"
+            android:paddingLeft="12.0dip"
+            android:paddingRight="12.0dip"
+            android:paddingTop="@dimen/dp8"
+            android:src="@drawable/ic_overflow"
+            android:visibility="gone"
+            zhihu:tintColor="?zhihu.icon.feedMenu" />
+
+        <com.zhihu.android.base.widget.ZHLinearLayout
+            android:id="@id/action_layout"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignWithParentIfMissing="true"
+            android:layout_toLeftOf="@id/menu"
+            android:orientation="horizontal"
+            android:paddingBottom="@dimen/dp4"
+            android:paddingTop="@dimen/dp8">
+
+            <com.zhihu.android.app.ui.widget.CircleAvatarView
+                android:id="@id/avatar"
+                android:layout_width="@dimen/card_avatar_size_small"
+                android:layout_height="@dimen/card_avatar_size_small"
+                android:layout_gravity="center_vertical" />
+
+            <com.zhihu.android.base.widget.ZHTextView
+                android:id="@id/action"
+                android:layout_width="0.0dip"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="8.0dip"
+                android:layout_weight="1.0"
+                android:ellipsize="end"
+                android:singleLine="true"
+                android:tag="binding_1"
+                android:textAppearance="?zhihu.textAppearance.action" />
+
+            <com.zhihu.android.base.widget.ZHTextView
+                android:id="@id/time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingRight="@dimen/dp8"
+                android:tag="binding_2"
+                android:textAppearance="?zhihu.textAppearance.action"
+                android:visibility="gone" />
+        </com.zhihu.android.base.widget.ZHLinearLayout>
+    </com.zhihu.android.base.widget.ZHRelativeLayout>
+
+    <com.zhihu.android.base.widget.ZHTextView
+        android:id="@id/title"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:ellipsize="end"
+        android:lineSpacingMultiplier="@dimen/card_line_spacing_multiplier"
+        android:maxLines="2"
+        android:paddingBottom="@dimen/dp4"
+        android:paddingRight="@dimen/dp8"
+        android:paddingTop="@dimen/dp4"
+        android:tag="binding_3"
+        android:textAppearance="?zhihu.textAppearance.medium.normal.primary" />
+
+    <com.zhihu.android.base.widget.ZHLinearLayout
+        android:id="@id/operate_layout"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <com.zhihu.android.base.widget.ZHTextView
+            android:id="@id/answer_count"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingBottom="@dimen/dp4"
+            android:paddingTop="@dimen/dp4"
+            android:singleLine="true"
+            android:tag="binding_4"
+            android:textAppearance="?zhihu.textAppearance.action" />
+
+        <com.zhihu.android.base.widget.ZHTextView
+            android:id="@id/follower_count"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingBottom="@dimen/dp4"
+            android:paddingTop="@dimen/dp4"
+            android:singleLine="true"
+            android:tag="binding_5"
+            android:textAppearance="?zhihu.textAppearance.action" />
+
+        <com.zhihu.android.base.widget.ZHTextView
+            android:id="@id/follow"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingBottom="@dimen/dp4"
+            android:paddingTop="@dimen/dp4"
+            android:singleLine="true"
+            android:tag="binding_6"
+            android:textAppearance="?zhihu.textAppearance.action" />
+    </com.zhihu.android.base.widget.ZHLinearLayout>
+</com.zhihu.android.base.widget.ZHLinearLayout>
