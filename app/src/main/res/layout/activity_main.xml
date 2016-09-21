@@ -27,7 +27,7 @@
                 android:layout_alignParentRight="true"
                 android:layout_centerVertical="true"
                 android:layout_marginRight="5dp"
-                android:src="@drawable/ic_feed_live_button" />
+                android:src="@drawable/live_button" />
 
             <RelativeLayout
                 android:layout_width="match_parent"
@@ -46,13 +46,13 @@
                     android:src="@drawable/ic_search" />
 
                 <TextView
-                    android:textSize="16sp"
-                    android:layout_marginLeft="10dp"
-                    android:layout_centerVertical="true"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="10dp"
                     android:layout_toRightOf="@id/search"
-                    android:text="搜索话题、问题或人" />
+                    android:text="搜索话题、问题或人"
+                    android:textSize="16sp" />
 
             </RelativeLayout>
 
@@ -70,72 +70,65 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="60dp"
+        android:layout_height="48dp"
         android:layout_gravity="bottom"
-        android:background="@color/colorPrimary"
+        android:background="@color/white"
         android:orientation="horizontal"
         app:layout_behavior="home.smart.fly.zhihuindex.behavior.BottomViewBehavior">
 
-        <LinearLayout
-            android:layout_width="0dp"
+        <RadioGroup
+            android:id="@+id/tabs_rg"
+            android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:gravity="center">
+            android:orientation="horizontal"
+            android:paddingLeft="5dp"
+            android:paddingRight="5dp">
 
-            <ImageView
-                android:layout_width="24dp"
-                android:layout_height="24dp"
-                android:src="@drawable/ic_bottomtabbar_feed" />
-        </LinearLayout>
+            <RadioButton
+                android:id="@+id/home_tab"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="#00000000"
+                android:button="@null"
+                android:checked="true"
+                android:drawableTop="@drawable/home_sel"
+                android:gravity="center|bottom"
+                android:paddingTop="5dp" />
 
-        <LinearLayout
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:gravity="center">
+            <RadioButton
+                android:id="@+id/explore_tab"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="#00000000"
+                android:button="@null"
+                android:drawableTop="@drawable/explore_sel"
+                android:gravity="center|bottom"
+                android:paddingTop="5dp" />
 
-            <ImageView
-                android:layout_width="24dp"
-                android:layout_height="24dp"
-                android:src="@drawable/ic_bottomtabbar_discover" />
-        </LinearLayout>
+            <RadioButton
+                android:id="@+id/notify_tab"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="#00000000"
+                android:button="@null"
+                android:drawableTop="@drawable/notify_sel"
+                android:gravity="center|bottom"
+                android:paddingTop="5dp" />
 
-        <LinearLayout
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:gravity="center">
-
-            <ImageView
-                android:layout_width="24dp"
-                android:layout_height="24dp"
-                android:src="@drawable/ic_bottomtabbar_notification" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:gravity="center">
-
-            <ImageView
-                android:layout_width="24dp"
-                android:layout_height="24dp"
-                android:src="@drawable/ic_bottomtabbar_message" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:gravity="center">
-
-            <ImageView
-                android:layout_width="24dp"
-                android:layout_height="24dp"
-                android:src="@drawable/ic_bottomtabbar_more" />
-        </LinearLayout>
-
+            <RadioButton
+                android:id="@+id/user_tab"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="#00000000"
+                android:button="@null"
+                android:drawableTop="@drawable/user_sel"
+                android:gravity="center|bottom"
+                android:paddingTop="5dp" />
+        </RadioGroup>
 
     </LinearLayout>
 

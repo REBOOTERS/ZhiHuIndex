@@ -12,12 +12,17 @@
         android:gravity="center_vertical"
         android:orientation="horizontal">
 
+        <ImageView
+            android:layout_width="24dp"
+            android:layout_height="24dp" />
+
+
         <de.hdodenhof.circleimageview.CircleImageView
             android:id="@+id/profile_image"
             android:layout_width="18dp"
             android:layout_height="18dp"
             android:layout_centerVertical="true"
-            android:src="@drawable/ic_history_profile" />
+            android:src="@drawable/profile" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -33,10 +38,23 @@
         android:id="@+id/text"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="10dp"
-        android:padding="5dp"
-        android:text="lllll"
+        android:layout_marginLeft="10dp"
+        android:lines="1"
+        android:text="@string/title"
         android:textColor="@color/black"
-        android:textSize="16sp" />
+        android:textSize="14sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="5dp"
+        android:ellipsize="end"
+        android:lines="3"
+        android:text="@string/large_text"
+        android:textColor="@color/black" />
+
 
 </LinearLayout>

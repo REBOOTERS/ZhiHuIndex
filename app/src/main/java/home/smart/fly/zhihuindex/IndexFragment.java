@@ -41,8 +41,10 @@ public class IndexFragment extends Fragment implements SwipeRefreshLayout.OnRefr
     }
 
     private void InitView() {
+        View headView = LayoutInflater.from(mContext).inflate(R.layout.index_list_headview, null);
         swipeRefreshLayout = (SwipeRefreshLayout) rootView.findViewById(R.id.swipe_refresh);
         swipeRefreshLayout.setColorSchemeResources(R.color.colorPrimary);
+        swipeRefreshLayout.setProgressViewOffset(false,0, (int) (mContext.getResources().getDisplayMetrics().density*64));
         swipeRefreshLayout.setOnRefreshListener(this);
         recyclerView = (RecyclerView) rootView.findViewById(R.id.recyclerview);
         LinearLayoutManager manager = new LinearLayoutManager(mContext);
@@ -52,7 +54,10 @@ public class IndexFragment extends Fragment implements SwipeRefreshLayout.OnRefr
             datas.add("This is item " + i);
         }
         adapter = new IndexRecyclerViewAdapter(datas);
+        adapter.setHeadView(headView);
         recyclerView.setAdapter(adapter);
+
+
     }
 
 
