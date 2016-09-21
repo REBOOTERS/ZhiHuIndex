@@ -1,4 +1,4 @@
-package home.smart.fly.zhihuindex;
+package home.smart.fly.zhihuindex.fragments;
 
 import android.content.Context;
 import android.os.Bundle;
@@ -15,6 +15,7 @@ import android.view.ViewGroup;
 import java.util.ArrayList;
 import java.util.List;
 
+import home.smart.fly.zhihuindex.R;
 import home.smart.fly.zhihuindex.adapter.IndexRecyclerViewAdapter;
 
 public class IndexFragment extends Fragment implements SwipeRefreshLayout.OnRefreshListener {

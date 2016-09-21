@@ -7,14 +7,18 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import home.smart.fly.zhihuindex.R;
+
 /**
  * Created by engineer on 2016/9/21.
  */
 
 public class SecondFragment extends Fragment {
+    private View rootView;
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        return super.onCreateView(inflater, container, savedInstanceState);
+        rootView = inflater.inflate(R.layout.fragment_two, container, false);
+        return  rootView;
     }
 }

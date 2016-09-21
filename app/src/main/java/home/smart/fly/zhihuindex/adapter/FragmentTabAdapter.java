@@ -107,7 +107,7 @@ public class FragmentTabAdapter implements RadioGroup.OnCheckedChangeListener {
 	/**
 	 * 
 	 */
-	static class OnRgsExtraCheckedChangedListener {
+	public static class OnRgsExtraCheckedChangedListener {
 		public void OnRgsExtraCheckedChanged(RadioGroup radioGroup,
 				int checkedId, int index) {
 
