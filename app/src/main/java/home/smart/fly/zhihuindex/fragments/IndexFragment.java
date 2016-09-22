@@ -54,7 +54,7 @@ public class IndexFragment extends Fragment implements SwipeRefreshLayout.OnRefr
         for (int i = 0; i < 100; i++) {
             datas.add("This is item " + i);
         }
-        adapter = new IndexRecyclerViewAdapter(datas);
+        adapter = new IndexRecyclerViewAdapter(mContext,datas);
         adapter.setHeadView(headView);
         recyclerView.setAdapter(adapter);
 

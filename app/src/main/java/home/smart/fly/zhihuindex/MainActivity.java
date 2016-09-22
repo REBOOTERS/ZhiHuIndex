@@ -4,11 +4,11 @@ package home.smart.fly.zhihuindex;
 import android.content.Context;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.design.widget.AppBarLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
-import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentTransaction;
 import android.util.Log;
+import android.view.View;
 import android.widget.RadioGroup;
 
 import java.util.ArrayList;
@@ -27,8 +27,7 @@ public class MainActivity extends FragmentActivity {
     private final String TAG = MainActivity.class.getSimpleName();
     private Context mContext;
 
-    private FragmentManager fragmentManager;
-    private FragmentTransaction transaction;
+    private AppBarLayout appBar;
 
     private List<Fragment> fragments = new ArrayList<>();
 
@@ -46,6 +45,7 @@ public class MainActivity extends FragmentActivity {
     }
 
     private void InitView() {
+        appBar = (AppBarLayout) findViewById(R.id.app_bar);
         rgs = (RadioGroup) findViewById(R.id.tabs_rg);
         fragments.add(new IndexFragment());
         fragments.add(new SecondFragment());
@@ -58,6 +58,22 @@ public class MainActivity extends FragmentActivity {
             public void OnRgsExtraCheckedChanged(RadioGroup radioGroup, int checkedId, int index) {
                 super.OnRgsExtraCheckedChanged(radioGroup, checkedId, index);
                 Log.e("CheckedChanged", "-----" + index);
+
+                switch (index) {
+                    case 0:
+                        appBar.setVisibility(View.VISIBLE);
+                        break;
+                    case 1:
+                    case 2:
+                    case 3:
+                        appBar.setVisibility(View.GONE);
+                        break;
+                    default:
+                        appBar.setVisibility(View.VISIBLE);
+                        break;
+
+                }
+
             }
         });
 
