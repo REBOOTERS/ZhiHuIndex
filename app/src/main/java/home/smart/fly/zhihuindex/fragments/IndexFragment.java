@@ -12,6 +12,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.github.clans.fab.FloatingActionMenu;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -25,7 +27,7 @@ public class IndexFragment extends Fragment implements SwipeRefreshLayout.OnRefr
     private IndexRecyclerViewAdapter adapter;
     //
     private View rootView;
-
+    private FloatingActionMenu floatingActionMenu;
 
     @Override
     public void onAttach(Context context) {
@@ -42,6 +44,7 @@ public class IndexFragment extends Fragment implements SwipeRefreshLayout.OnRefr
     }
 
     private void InitView() {
+        floatingActionMenu = (FloatingActionMenu) rootView.findViewById(R.id.menu_yellow);
         View headView = LayoutInflater.from(mContext).inflate(R.layout.index_list_headview, null);
         swipeRefreshLayout = (SwipeRefreshLayout) rootView.findViewById(R.id.swipe_refresh);
         swipeRefreshLayout.setColorSchemeResources(R.color.colorPrimary);
@@ -57,6 +60,20 @@ public class IndexFragment extends Fragment implements SwipeRefreshLayout.OnRefr
         adapter = new IndexRecyclerViewAdapter(mContext,datas);
         adapter.setHeadView(headView);
         recyclerView.setAdapter(adapter);
+
+        recyclerView.addOnScrollListener(new RecyclerView.OnScrollListener() {
+            @Override
+            public void onScrolled(RecyclerView recyclerView, int dx, int dy) {
+                super.onScrolled(recyclerView, dx, dy);
+                if(Math.abs(dy)>4){
+                    if(dy>0){
+                        floatingActionMenu.hideMenu(true);
+                    }else {
+                        floatingActionMenu.showMenu(true);
+                    }
+                }
+            }
+        });
 
 
     }

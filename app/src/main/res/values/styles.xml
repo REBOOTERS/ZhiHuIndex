@@ -22,4 +22,20 @@
         <item name="android:windowExitAnimation">@anim/fade_out</item>
     </style>
 
+    <style name="MenuButtonsSmall">
+        <item name="fab_size">mini</item>
+        <item name="fab_shadowColor">#26000000</item>
+        <item name="fab_colorNormal">@color/menubackground</item>
+        <item name="fab_colorPressed">#ffE5E5E5</item>
+        <item name="fab_colorRipple">#33000000</item>
+    </style>
+
+    <style name="MenuLabelsStyle">
+        <item name="android:background">@drawable/fab_label_background</item>
+        <item name="android:textColor">#000000</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:maxLines">1</item>
+        <item name="android:ellipsize">end</item>
+    </style>
+
 </resources>
