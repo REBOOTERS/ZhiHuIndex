@@ -20,12 +20,11 @@ import home.smart.fly.zhihuindex.adapter.FragmentAdapter;
  * Created by engineer on 2016/9/21.
  */
 
-public class SecondFragment extends Fragment  {
+public class SecondFragment extends Fragment {
     private View rootView;
     private Context mContext;
     private TabLayout mTabLayout;
     private ViewPager mViewPager;
-
 
 
     @Override
@@ -45,7 +44,7 @@ public class SecondFragment extends Fragment  {
 
     private void InitView() {
         mTabLayout = (TabLayout) rootView.findViewById(R.id.tabs);
-        mViewPager= (ViewPager) rootView.findViewById(R.id.viewpager);
+        mViewPager = (ViewPager) rootView.findViewById(R.id.viewpager);
 
         //初始化TabLayout的title
         mTabLayout.addTab(mTabLayout.newTab().setText("推荐"));
@@ -61,10 +60,10 @@ public class SecondFragment extends Fragment  {
 
         //初始化ViewPager的数据集
         List<Fragment> fragments = new ArrayList<>();
-        fragments.add(new IndexFragment());
-        fragments.add(new IndexFragment());
-        fragments.add(new IndexFragment());
-        fragments.add(new IndexFragment());
+        fragments.add(new SecondSubFragment());
+        fragments.add(new SecondSubFragment());
+        fragments.add(new SecondSubFragment());
+        fragments.add(new SecondSubFragment());
         //创建ViewPager的adapter
         FragmentAdapter adapter = new FragmentAdapter(getChildFragmentManager(), fragments, titles);
         mViewPager.setAdapter(adapter);

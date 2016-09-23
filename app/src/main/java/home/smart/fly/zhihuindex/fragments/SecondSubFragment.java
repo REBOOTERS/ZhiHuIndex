@@ -12,22 +12,22 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.github.clans.fab.FloatingActionMenu;
+import com.github.clans.fab.FloatingActionButton;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import home.smart.fly.zhihuindex.R;
-import home.smart.fly.zhihuindex.adapter.IndexRecyclerViewAdapter;
+import home.smart.fly.zhihuindex.adapter.SubRecyclerViewAdapter;
 
-public class IndexFragment extends Fragment implements SwipeRefreshLayout.OnRefreshListener {
+public class SecondSubFragment extends Fragment implements SwipeRefreshLayout.OnRefreshListener {
     private Context mContext;
     private SwipeRefreshLayout swipeRefreshLayout;
     private RecyclerView recyclerView;
-    private IndexRecyclerViewAdapter adapter;
+    private SubRecyclerViewAdapter adapter;
     //
     private View rootView;
-    private FloatingActionMenu fam;
+    private FloatingActionButton fab;
 
     @Override
     public void onAttach(Context context) {
@@ -38,14 +38,13 @@ public class IndexFragment extends Fragment implements SwipeRefreshLayout.OnRefr
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        rootView = inflater.inflate(R.layout.fragment_index, null);
+        rootView = inflater.inflate(R.layout.fragment_second_sub, null);
         InitView();
         return rootView;
     }
 
     private void InitView() {
-        fam = (FloatingActionMenu) rootView.findViewById(R.id.menu_yellow);
-        View headView = LayoutInflater.from(mContext).inflate(R.layout.index_list_headview, null);
+        fab = (FloatingActionButton) rootView.findViewById(R.id.sub_fab);
         swipeRefreshLayout = (SwipeRefreshLayout) rootView.findViewById(R.id.swipe_refresh);
         swipeRefreshLayout.setColorSchemeResources(R.color.colorPrimary);
         swipeRefreshLayout.setProgressViewOffset(false, 0, (int) (mContext.getResources().getDisplayMetrics().density * 64));
@@ -57,8 +56,7 @@ public class IndexFragment extends Fragment implements SwipeRefreshLayout.OnRefr
         for (int i = 0; i < 100; i++) {
             datas.add("This is item " + i);
         }
-        adapter = new IndexRecyclerViewAdapter(mContext, datas);
-        adapter.setHeadView(headView);
+        adapter = new SubRecyclerViewAdapter(mContext, datas);
         recyclerView.setAdapter(adapter);
         recyclerView.addOnScrollListener(new RecyclerView.OnScrollListener() {
             @Override
@@ -66,14 +64,13 @@ public class IndexFragment extends Fragment implements SwipeRefreshLayout.OnRefr
                 super.onScrolled(recyclerView, dx, dy);
                 if (Math.abs(dy) > 5) {
                     if (dy > 0) {
-                        fam.hideMenu(true);
+                        fab.hide(true);
                     } else {
-                        fam.showMenu(true);
+                        fab.show(true);
                     }
                 }
             }
         });
-
 
     }
 

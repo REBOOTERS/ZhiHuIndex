@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:fab="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    xmlns:fab="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".fragments.IndexFragment">
@@ -25,33 +25,31 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_gravity="bottom|end"
-        android:paddingBottom="80dp"
-        android:paddingRight="16dp"
+        android:paddingBottom="55dp"
         android:paddingEnd="16dp"
-        fab:menu_fab_hide_animation="@anim/jump_to_down"
-        fab:menu_fab_show_animation="@anim/jump_from_down"
-        fab:menu_labels_style="@style/MenuLabelsStyle"
+        android:paddingRight="16dp"
         fab:menu_animationDelayPerItem="0"
         fab:menu_backgroundColor="#ccffffff"
         fab:menu_colorNormal="#FFB805"
         fab:menu_colorPressed="#F2AB00"
         fab:menu_colorRipple="#D99200"
+        fab:menu_fab_hide_animation="@anim/jump_to_down"
+        fab:menu_fab_show_animation="@anim/jump_from_down"
+        fab:menu_labels_style="@style/MenuLabelsStyle"
         fab:menu_shadowColor="#444">
 
         <com.github.clans.fab.FloatingActionButton
             style="@style/MenuButtonsSmall"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/question"
-            android:background="@color/black"
+            android:src="@drawable/write"
             fab:fab_label="写文章" />
 
         <com.github.clans.fab.FloatingActionButton
             style="@style/MenuButtonsSmall"
-            fab:backgroundTint="@color/black"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/question"
+            android:src="@drawable/answer"
             fab:fab_label="回答" />
 
         <com.github.clans.fab.FloatingActionButton
