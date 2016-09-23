@@ -6,15 +6,13 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.design.widget.AppBarLayout;
 import android.support.design.widget.CoordinatorLayout;
-import android.support.design.widget.Snackbar;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
 import android.util.Log;
 import android.view.View;
+import android.widget.FrameLayout;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
-
-import com.github.clans.fab.FloatingActionButton;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -34,9 +32,9 @@ public class MainActivity extends FragmentActivity {
 
 
     private CoordinatorLayout coordinatorLayout;
+    private FrameLayout content;
     private AppBarLayout index_app_bar;
     private AppBarLayout profile_app_bar;
-    private FloatingActionButton fab;
 
     private List<Fragment> fragments = new ArrayList<>();
 
@@ -56,8 +54,8 @@ public class MainActivity extends FragmentActivity {
     }
 
     private void InitView() {
+        content = (FrameLayout) findViewById(R.id.content);
         coordinatorLayout = (CoordinatorLayout) findViewById(R.id.coordinatorLayout);
-        fab = (FloatingActionButton) findViewById(R.id.fab);
         index_app_bar = (AppBarLayout) findViewById(R.id.index_app_bar);
         rgs = (RadioGroup) findViewById(R.id.tabs_rg);
         index_tab = (RadioButton) findViewById(R.id.home_tab);
@@ -81,7 +79,6 @@ public class MainActivity extends FragmentActivity {
                     case 1:
                         break;
                     case 2:
-                        fab.setVisibility(View.VISIBLE);
                         break;
                     case 3:
                         break;
@@ -93,21 +90,11 @@ public class MainActivity extends FragmentActivity {
             }
         });
 
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Snackbar.make(coordinatorLayout, "Auto Coordinate", Snackbar.LENGTH_SHORT)
-                        .setAction("llll", null)
-                        .show();
-            }
-        });
-
 
     }
 
     private void resetView() {
         index_app_bar.setVisibility(View.GONE);
-        fab.setVisibility(View.GONE);
     }
 
     @Override
