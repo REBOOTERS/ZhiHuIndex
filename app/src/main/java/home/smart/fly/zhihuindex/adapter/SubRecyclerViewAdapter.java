@@ -7,7 +7,6 @@ import android.util.DisplayMetrics;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
@@ -15,8 +14,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 import home.smart.fly.zhihuindex.R;
-import home.smart.fly.zhihuindex.util.ScreenUtil;
-import home.smart.fly.zhihuindex.widget.ListItemMenu;
 
 /**
  * Created by co-mall on 2016/9/13.
@@ -49,7 +46,7 @@ public class SubRecyclerViewAdapter extends RecyclerView.Adapter<SubRecyclerView
         }
 
 
-        View view = LayoutInflater.from(mContext).inflate(R.layout.index_list_item, null);
+        View view = LayoutInflater.from(mContext).inflate(R.layout.sub_list_item, null);
         MyViewHolder holder = new MyViewHolder(view);
         return holder;
     }
@@ -66,17 +63,7 @@ public class SubRecyclerViewAdapter extends RecyclerView.Adapter<SubRecyclerView
 
 //        holder.text.setText(datas.get(pos));
 
-        holder.menu.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                ListItemMenu menu = new ListItemMenu(menuW, menuH, mContext);
-                menu.update();
-                int offx = ScreenUtil.dip2px(mContext, 24);
-                int offy = ScreenUtil.dip2px(mContext, 24);
-                menu.setAnimationStyle(R.style.MenuAnim);
-                menu.showAsDropDown(holder.menu, -menuW + offx, -offy);
-            }
-        });
+
     }
 
     @Override
@@ -93,13 +80,11 @@ public class SubRecyclerViewAdapter extends RecyclerView.Adapter<SubRecyclerView
 
     public class MyViewHolder extends RecyclerView.ViewHolder {
         TextView text;
-        ImageView menu;
 
         public MyViewHolder(View itemView) {
             super(itemView);
             if (itemView == headView) return;
             text = (TextView) itemView.findViewById(R.id.text);
-            menu = (ImageView) itemView.findViewById(R.id.menu);
         }
     }
 
