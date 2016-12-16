@@ -31,7 +31,7 @@ public class ThirdFragment extends Fragment {
         rootView.findViewById(R.id.btnFloatingAction).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Snackbar.make(layout, "connection error", Snackbar.LENGTH_LONG).setAction("retry", new View.OnClickListener() {
+                Snackbar.make(layout, "网络连接错误", Snackbar.LENGTH_LONG).setAction("再试一次", new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
                     }

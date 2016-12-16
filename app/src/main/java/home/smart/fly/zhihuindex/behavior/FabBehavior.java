@@ -19,9 +19,6 @@ public class FabBehavior extends CoordinatorLayout.Behavior<View> {
      * 控件距离coordinatorLayout底部距离
      */
     private float viewDistance;
-    /**
-     * 动画是否在进行
-     */
     private boolean aninmating;
 
 
@@ -29,7 +26,6 @@ public class FabBehavior extends CoordinatorLayout.Behavior<View> {
         super(context, attrs);
     }
 
-    //在嵌套滑动开始前回调
     @Override
     public boolean onStartNestedScroll(CoordinatorLayout coordinatorLayout, View child, View directTargetChild, View target, int nestedScrollAxes) {
 

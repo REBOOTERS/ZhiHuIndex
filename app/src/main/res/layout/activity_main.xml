@@ -18,7 +18,7 @@
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
             android:background="@color/colorPrimary"
-            app:layout_scrollFlags="scroll|enterAlways|snap">
+            app:layout_scrollFlags="scroll|enterAlways">
 
             <ImageView
                 android:id="@+id/live"
@@ -61,6 +61,9 @@
 
 
     </android.support.design.widget.AppBarLayout>
+
+
+
 
 
     <FrameLayout
@@ -133,9 +136,6 @@
         </RadioGroup>
 
     </LinearLayout>
-
-
-
 
 
 </android.support.design.widget.CoordinatorLayout>

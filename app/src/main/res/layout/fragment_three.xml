@@ -21,6 +21,14 @@
 
     </LinearLayout>
 
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:text="没有消息"
+        android:textSize="18sp" />
+
 
     <android.support.design.widget.CoordinatorLayout
         android:id="@+id/layout"

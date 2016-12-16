@@ -25,6 +25,7 @@
             android:orientation="horizontal">
 
             <ImageView
+                android:visibility="invisible"
                 android:id="@+id/menu"
                 android:layout_width="24dp"
                 android:layout_height="24dp"
@@ -45,25 +46,9 @@
                 android:layout_centerVertical="true"
                 android:layout_marginLeft="10dp"
                 android:layout_toRightOf="@id/profile_image"
-                android:text="来自话题：社会"
+                android:text="jacky"
                 android:textSize="15sp" />
         </RelativeLayout>
-
-        <android.support.v7.widget.CardView
-            android:layout_width="match_parent"
-            android:layout_height="160dp"
-            android:layout_margin="12dp"
-            app:cardCornerRadius="2dp">
-
-            <ImageView
-                android:id="@+id/pic"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:scaleType="fitXY"
-                android:src="@drawable/cardpic" />
-
-
-        </android.support.v7.widget.CardView>
 
 
         <TextView

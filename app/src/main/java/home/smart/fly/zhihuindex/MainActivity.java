@@ -5,7 +5,6 @@ import android.content.Context;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.design.widget.AppBarLayout;
-import android.support.design.widget.CoordinatorLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
 import android.util.Log;
@@ -31,10 +30,8 @@ public class MainActivity extends FragmentActivity {
     private Context mContext;
 
 
-    private CoordinatorLayout coordinatorLayout;
     private FrameLayout content;
     private AppBarLayout index_app_bar;
-    private AppBarLayout profile_app_bar;
 
     private List<Fragment> fragments = new ArrayList<>();
 
@@ -42,6 +39,8 @@ public class MainActivity extends FragmentActivity {
     private RadioGroup rgs;
     private RadioButton index_tab;
     private int currentIndex = 0;
+
+
 
 
     @Override
@@ -55,7 +54,6 @@ public class MainActivity extends FragmentActivity {
 
     private void InitView() {
         content = (FrameLayout) findViewById(R.id.content);
-        coordinatorLayout = (CoordinatorLayout) findViewById(R.id.coordinatorLayout);
         index_app_bar = (AppBarLayout) findViewById(R.id.index_app_bar);
         rgs = (RadioGroup) findViewById(R.id.tabs_rg);
         index_tab = (RadioButton) findViewById(R.id.home_tab);
