@@ -2,6 +2,7 @@ package home.smart.fly.zhihuindex.adapter;
 
 import android.app.Activity;
 import android.content.Context;
+import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.DisplayMetrics;
 import android.view.LayoutInflater;
@@ -67,6 +68,14 @@ public class IndexRecyclerViewAdapter extends RecyclerView.Adapter<IndexRecycler
 
         final int pos = getRealPosition(holder);
 
+        if (pos == 1) {
+            holder.liveList.setVisibility(View.VISIBLE);
+            holder.normalShell.setVisibility(View.GONE);
+        } else {
+            holder.liveList.setVisibility(View.GONE);
+            holder.normalShell.setVisibility(View.VISIBLE);
+        }
+
 
 //        holder.text.setText(datas.get(pos));
 
@@ -84,6 +93,12 @@ public class IndexRecyclerViewAdapter extends RecyclerView.Adapter<IndexRecycler
                 menu.showAsDropDown(holder.menu, -menuW + offx, -offy);
             }
         });
+
+        LinearLayoutManager manager = new LinearLayoutManager(mContext);
+        manager.setOrientation(LinearLayoutManager.HORIZONTAL);
+        holder.liveList.setLayoutManager(manager);
+        IndexLiveHListAdapter adapter = new IndexLiveHListAdapter(datas);
+        holder.liveList.setAdapter(adapter);
     }
 
     @Override
@@ -103,6 +118,8 @@ public class IndexRecyclerViewAdapter extends RecyclerView.Adapter<IndexRecycler
         ImageView menu;
         CircleImageView profile_pic;
         ImageView pic;
+        LinearLayout normalShell;
+        RecyclerView liveList;
 
         public MyViewHolder(View itemView) {
             super(itemView);
@@ -111,6 +128,8 @@ public class IndexRecyclerViewAdapter extends RecyclerView.Adapter<IndexRecycler
             menu = (ImageView) itemView.findViewById(R.id.menu);
             profile_pic = (CircleImageView) itemView.findViewById(R.id.profile_image);
             pic = (ImageView) itemView.findViewById(R.id.pic);
+            normalShell = (LinearLayout) itemView.findViewById(R.id.normalList);
+            liveList = (RecyclerView) itemView.findViewById(R.id.liveList);
         }
     }
 
