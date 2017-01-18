@@ -2,6 +2,7 @@ package home.smart.fly.zhihuindex;
 
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.design.widget.AppBarLayout;
@@ -39,8 +40,6 @@ public class MainActivity extends FragmentActivity {
     private RadioGroup rgs;
     private RadioButton index_tab;
     private int currentIndex = 0;
-
-
 
 
     @Override
@@ -85,6 +84,13 @@ public class MainActivity extends FragmentActivity {
 
                 }
 
+            }
+        });
+
+        findViewById(R.id.live).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(mContext, FakeWeiBoActivity.class));
             }
         });
 
