@@ -7,7 +7,7 @@ import android.util.AttributeSet;
 import android.view.View;
 
 /**
- * Created by co-mall on 2016/9/13.
+ * Created by engineer on 2016/9/13.
  */
 public class BottomViewBehavior extends CoordinatorLayout.Behavior<View> {
     public BottomViewBehavior(Context context, AttributeSet attrs) {

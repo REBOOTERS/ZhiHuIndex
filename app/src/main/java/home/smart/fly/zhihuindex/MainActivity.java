@@ -23,7 +23,7 @@ import home.smart.fly.zhihuindex.fragments.SecondFragment;
 import home.smart.fly.zhihuindex.fragments.ThirdFragment;
 
 /**
- * Created by co-mall on 2016/9/13.
+ * Created by engineer on 2016/9/13.
  */
 public class MainActivity extends FragmentActivity {
     private final String TAG = MainActivity.class.getSimpleName();

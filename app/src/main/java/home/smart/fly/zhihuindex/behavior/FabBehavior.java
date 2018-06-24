@@ -11,7 +11,7 @@ import android.view.ViewPropertyAnimator;
 import android.view.animation.Interpolator;
 
 /**
- * Created by co-mall on 2016/9/13.
+ * Created by engineer on 2016/9/13.
  */
 public class FabBehavior extends CoordinatorLayout.Behavior<View> {
     private static final Interpolator INTERPOLATOR = new FastOutSlowInInterpolator();

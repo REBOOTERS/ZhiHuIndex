@@ -16,7 +16,7 @@ import java.util.List;
 import home.smart.fly.zhihuindex.R;
 
 /**
- * Created by co-mall on 2016/9/13.
+ * Created by engineer on 2016/9/13.
  */
 public class SubRecyclerViewAdapter extends RecyclerView.Adapter<SubRecyclerViewAdapter.MyViewHolder> {
     private static final int TYPE_HEADER = 0;

@@ -24,7 +24,7 @@ import home.smart.fly.zhihuindex.util.ScreenUtil;
 import home.smart.fly.zhihuindex.widget.ListItemMenu;
 
 /**
- * Created by co-mall on 2016/9/13.
+ * Created by engineer on 2016/9/13.
  */
 public class IndexRecyclerViewAdapter extends RecyclerView.Adapter<IndexRecyclerViewAdapter.MyViewHolder> {
     private static final int TYPE_HEADER = 0;
