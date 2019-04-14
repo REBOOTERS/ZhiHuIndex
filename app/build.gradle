@@ -1,13 +1,13 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 24
-    buildToolsVersion '27.0.3'
+    compileSdkVersion 28
+
 
     defaultConfig {
         applicationId "home.smart.fly.zhihuindex"
         minSdkVersion 16
-        targetSdkVersion 24
+        targetSdkVersion 28
         versionCode 1
         versionName "1.0"
     }
@@ -22,10 +22,10 @@ android {
 dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
     testImplementation 'junit:junit:4.12'
-    implementation 'com.android.support:appcompat-v7:24.2.1'
-    implementation 'com.android.support:design:24.2.1'
+    implementation 'com.android.support:appcompat-v7:28.0.0'
+    implementation 'com.android.support:design:28.0.0'
     implementation 'de.hdodenhof:circleimageview:2.2.0'
     implementation 'com.github.bumptech.glide:glide:3.8.0'
     implementation 'com.github.clans:fab:1.6.4'
-    implementation 'com.android.support:cardview-v7:24.2.1'
+    implementation 'com.android.support:cardview-v7:28.0.0'
 }
