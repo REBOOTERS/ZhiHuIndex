@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/coordinatorLayout"
@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
     tools:context=".fragments.IndexFragment">
 
-    <android.support.design.widget.AppBarLayout
+    <com.google.android.material.appbar.AppBarLayout
         android:id="@+id/index_app_bar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -60,10 +60,7 @@
         </RelativeLayout>
 
 
-    </android.support.design.widget.AppBarLayout>
-
-
-
+    </com.google.android.material.appbar.AppBarLayout>
 
 
     <FrameLayout
@@ -78,6 +75,7 @@
         android:layout_height="48dp"
         android:layout_gravity="bottom"
         android:background="@color/white"
+        android:gravity="center_vertical"
         android:orientation="horizontal"
         app:layout_behavior="home.smart.fly.zhihuindex.behavior.BottomViewBehavior">
 
@@ -85,6 +83,7 @@
             android:id="@+id/tabs_rg"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:layout_gravity="center_vertical"
             android:orientation="horizontal"
             android:paddingLeft="5dp"
             android:paddingRight="5dp">
@@ -98,7 +97,7 @@
                 android:button="@null"
                 android:checked="true"
                 android:drawableTop="@drawable/home_sel"
-                android:gravity="center|bottom"
+                android:gravity="center"
                 android:paddingTop="5dp" />
 
             <RadioButton
@@ -109,7 +108,7 @@
                 android:background="#00000000"
                 android:button="@null"
                 android:drawableTop="@drawable/explore_sel"
-                android:gravity="center|bottom"
+                android:gravity="center"
                 android:paddingTop="5dp" />
 
             <RadioButton
@@ -120,7 +119,7 @@
                 android:background="#00000000"
                 android:button="@null"
                 android:drawableTop="@drawable/notify_sel"
-                android:gravity="center|bottom"
+                android:gravity="center"
                 android:paddingTop="5dp" />
 
             <RadioButton
@@ -131,11 +130,11 @@
                 android:background="#00000000"
                 android:button="@null"
                 android:drawableTop="@drawable/user_sel"
-                android:gravity="center|bottom"
+                android:gravity="center"
                 android:paddingTop="5dp" />
         </RadioGroup>
 
     </LinearLayout>
 
 
-</android.support.design.widget.CoordinatorLayout>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

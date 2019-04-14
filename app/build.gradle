@@ -22,10 +22,10 @@ android {
 dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
     testImplementation 'junit:junit:4.12'
-    implementation 'com.android.support:appcompat-v7:28.0.0'
-    implementation 'com.android.support:design:28.0.0'
-    implementation 'de.hdodenhof:circleimageview:2.2.0'
-    implementation 'com.github.bumptech.glide:glide:3.8.0'
+    implementation 'androidx.appcompat:appcompat:1.1.0-alpha04'
+    implementation 'com.google.android.material:material:1.1.0-alpha05'
+    implementation 'de.hdodenhof:circleimageview:3.0.0'
+    implementation 'com.github.bumptech.glide:glide:4.8.0'
     implementation 'com.github.clans:fab:1.6.4'
-    implementation 'com.android.support:cardview-v7:28.0.0'
+    implementation 'androidx.cardview:cardview:1.0.0'
 }

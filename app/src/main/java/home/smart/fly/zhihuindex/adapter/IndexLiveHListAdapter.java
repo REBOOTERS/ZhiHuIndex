@@ -1,13 +1,20 @@
 package home.smart.fly.zhihuindex.adapter;
 
 import android.content.Context;
-import android.support.v7.widget.RecyclerView;
+
+import androidx.recyclerview.widget.RecyclerView;
+
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
+
+import com.bumptech.glide.Glide;
+import com.bumptech.glide.request.RequestOptions;
 
 import java.util.List;
 
+import home.smart.fly.zhihuindex.Constant;
 import home.smart.fly.zhihuindex.R;
 
 /**
@@ -34,7 +41,11 @@ public class IndexLiveHListAdapter extends RecyclerView.Adapter<IndexLiveHListAd
 
     @Override
     public void onBindViewHolder(MyHolder holder, int position) {
-
+        RequestOptions options = new RequestOptions();
+        options.placeholder(R.drawable.profile);
+        Glide.with(mContext).load(Constant.headPics.get(position % 3))
+                .apply(options)
+                .into(holder.mImageView);
     }
 
     @Override
@@ -43,9 +54,11 @@ public class IndexLiveHListAdapter extends RecyclerView.Adapter<IndexLiveHListAd
     }
 
     class MyHolder extends RecyclerView.ViewHolder {
+        private ImageView mImageView;
 
         public MyHolder(View itemView) {
             super(itemView);
+            mImageView = itemView.findViewById(R.id.itemImg);
         }
     }
 }

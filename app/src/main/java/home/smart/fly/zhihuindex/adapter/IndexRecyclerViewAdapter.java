@@ -2,8 +2,10 @@ package home.smart.fly.zhihuindex.adapter;
 
 import android.app.Activity;
 import android.content.Context;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
+
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+
 import android.util.DisplayMetrics;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -13,6 +15,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
+import com.bumptech.glide.request.RequestOptions;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -77,10 +80,17 @@ public class IndexRecyclerViewAdapter extends RecyclerView.Adapter<IndexRecycler
         }
 
 
-//        holder.text.setText(datas.get(pos));
+        RequestOptions option1 = new RequestOptions();
+        option1.placeholder(R.drawable.profile);
 
-        Glide.with(mContext).load(Constant.headPics.get(pos % 3)).placeholder(R.drawable.profile).into(holder.profile_pic);
-        Glide.with(mContext).load(Constant.itemPics.get(pos % 3)).placeholder(R.drawable.cardpic).into(holder.pic);
+        RequestOptions option2 = new RequestOptions();
+        option2.placeholder(R.drawable.cardpic);
+
+        Glide.with(mContext).load(Constant.headPics.get(pos % 3))
+                .apply(option1)
+                .into(holder.profile_pic);
+        Glide.with(mContext).load(Constant.itemPics.get(pos % 3))
+                .apply(option2).into(holder.pic);
 
         holder.menu.setOnClickListener(new View.OnClickListener() {
             @Override

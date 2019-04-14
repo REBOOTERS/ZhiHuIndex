@@ -2,10 +2,16 @@ package home.smart.fly.zhihuindex.fragments;
 
 import android.content.Context;
 import android.os.Bundle;
-import android.support.annotation.Nullable;
-import android.support.design.widget.CollapsingToolbarLayout;
-import android.support.design.widget.FloatingActionButton;
-import android.support.v4.app.Fragment;
+
+import androidx.annotation.Nullable;
+
+import com.bumptech.glide.annotation.GlideOption;
+import com.bumptech.glide.request.RequestOptions;
+import com.google.android.material.appbar.CollapsingToolbarLayout;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
+
+import androidx.fragment.app.Fragment;
+
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -27,7 +33,7 @@ public class FourFragment extends Fragment {
     private Context mContext;
     private CollapsingToolbarLayout collapsing_toolbar;
     private FloatingActionButton fab;
-    private static final String picUrl = "http://img1.imgtn.bdimg.com/it/u=3743691986,2983459167&fm=21&gp=0.jpg";
+    private static final String picUrl = "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1555240524505&di=e830aa1a09dd2fd1a66a77d8b4447d88&imgtype=0&src=http%3A%2F%2Fhbimg.b0.upaiyun.com%2F71a4a6493bf00fd5bd80726375d930bc956939bb96e1-EKBAae_fw658";
 
     @Nullable
     @Override
@@ -54,7 +60,11 @@ public class FourFragment extends Fragment {
             }
         });
         CircleImageView view = (CircleImageView) rootView.findViewById(headview);
-        Glide.with(mContext).load(picUrl).placeholder(R.drawable.profile).into(view);
+        RequestOptions option = new RequestOptions();
+        option.placeholder(R.drawable.profile);
+        Glide.with(mContext).load(picUrl)
+                .apply(option)
+                .into(view);
 
     }
 }
