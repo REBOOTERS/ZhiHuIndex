@@ -6,12 +6,7 @@ import androidx.fragment.app.FragmentStatePagerAdapter;
 
 import java.util.List;
 
-/**
- * Author       : yanbo
- * Date         : 2015-06-01
- * Time         : 15:32
- * Description  :
- */
+
 public class FragmentAdapter extends FragmentStatePagerAdapter {
     private List<Fragment> mFragments;
     private List<String> mTitles;
