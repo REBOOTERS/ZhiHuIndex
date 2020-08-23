@@ -33,7 +33,7 @@ public class FourFragment extends Fragment {
     private Context mContext;
     private CollapsingToolbarLayout collapsing_toolbar;
     private FloatingActionButton fab;
-    private static final String picUrl = "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1555240524505&di=e830aa1a09dd2fd1a66a77d8b4447d88&imgtype=0&src=http%3A%2F%2Fhbimg.b0.upaiyun.com%2F71a4a6493bf00fd5bd80726375d930bc956939bb96e1-EKBAae_fw658";
+    private static final String picUrl = "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1598162586419&di=260eac98ae8453f3902cc7449d257fe9&imgtype=0&src=http%3A%2F%2Fdik.img.kttpdq.com%2Fpic%2F43%2F30078%2F36f07a573638e4c2.jpg";
 
     @Nullable
     @Override
@@ -60,10 +60,8 @@ public class FourFragment extends Fragment {
             }
         });
         CircleImageView view = (CircleImageView) rootView.findViewById(headview);
-        RequestOptions option = new RequestOptions();
-        option.placeholder(R.drawable.profile);
         Glide.with(mContext).load(picUrl)
-                .apply(option)
+                .placeholder(R.drawable.profile)
                 .into(view);
 
     }
