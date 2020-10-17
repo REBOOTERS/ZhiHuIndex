@@ -2,10 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/ZhiHuIndex.iml" filepath="$PROJECT_DIR$/ZhiHuIndex.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/ZhiHuIndex-app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/ZhiHuIndex-app.iml" group="ZhiHuIndex/app" />
-      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/product-ZhiHuIndex.iml" filepath="$PROJECT_DIR$/.idea/modules/product-ZhiHuIndex.iml" group="ZhiHuIndex" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/ZhiHuIndex.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/ZhiHuIndex.app.iml" />
     </modules>
   </component>
 </project>
